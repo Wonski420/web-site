@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../style/CContent.css'
-import {text} from './textloader.js'
+import text from '../res/text.txt'
 
 const DivVideo = ({ link }) => {
     return (

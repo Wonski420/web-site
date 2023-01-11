@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../style/CContent.css'
-import text from '../res/text.txt'
+import defaultText from '../res/text.json'
 
 const DivVideo = ({ link }) => {
     return (
@@ -16,7 +16,7 @@ const TextBox = ({ title, text }) => {
         <div>
             <h1 onClick={() => { alert(title) }}>{title}</h1>
             <p className="textbox">
-                {text}
+                {text.content}
             </p>
         </div>
     )
@@ -33,17 +33,17 @@ class CContent extends Component {
                     <DivVideo link="https://www.youtube.com/embed/mXFiP-2Ip4Y" />
                 </div>
                 <div className='content'>
-                    <TextBox title='Unity Engine' text={text}
+                    <TextBox title='Unity Engine' text={defaultText}
                     />
-                    <TextBox title='Unity Engine' text={text}
+                    <TextBox title='Unity Engine' text={defaultText}
                     />
                 </div>
                 <div className='content'>
-                    <TextBox title='Unity Engine' text={text}
+                    <TextBox title='Unity Engine' text={defaultText}
                     />
-                    <TextBox title='Unity Engine' text={text}
+                    <TextBox title='Unity Engine' text={defaultText}
                     />
-                    <TextBox title='Unity Engine' text={text}
+                    <TextBox title='Unity Engine' text={defaultText}
                     />
                 </div>
             </div>

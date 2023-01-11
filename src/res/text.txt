@@ -1,4 +1,0 @@
-Silnik do tworzenia trójwymiarowych oraz dwuwymiarowych gier komputerowych lub innych materiałów interaktywnych,
-takich jak wizualizacje czy animacje. Działa na systemie operacyjnym Microsoft Windows,
-macOS oraz Linux i pozwala tworzyć aplikacje na przeglądarki internetowe,
-komputery osobiste, konsole gier wideo oraz urządzenia mobilne.

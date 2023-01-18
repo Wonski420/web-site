@@ -1,12 +1,40 @@
 .footer {
     width: 100%;
-    height: 3vh;
+    height: 5vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     border-color: black;
+    background-color: white;
     border: 0.1vh;
     border-style: solid none none none;
     bottom: 0px;
 }
+
+.footer-logo{
+    position: absolute;
+    height: 2vh;
+    width: 2vh;
+}
+
+@media only screen and (min-width: 414px) {
+    /* For smartphones: */
+    .footer-logo{
+        right: 12vw;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .footer-logo{
+        right: 16vw;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .footer-logo{
+        right: 15vw;
+    }
+  }

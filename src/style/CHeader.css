@@ -13,7 +13,6 @@
 
 .headerLogo{
     height: 10vmin;
-    pointer-events: none;
 }
 
 .headerContainer h2 {

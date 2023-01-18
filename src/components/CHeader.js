@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-import logo from '../img/Unity-Emblem.png';
 import '../style/CHeader.css'
+import CLogo from '../components/CLogo';
+
+function refreshPage() {
+    window.location.reload(false);
+}
 
 class CHeader extends Component{
+
     render(){
         return(
-            <div className='headerContainer'>
-                <img src={logo} className='headerLogo' alt='logo'></img>
+            <div className="header-container">
+            <CLogo/>
             </div>
         );
     }

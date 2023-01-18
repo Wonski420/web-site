@@ -5,15 +5,25 @@ import CHeader from './CHeader.js';
 import { CNavbar } from './CNavbar.js';
 import { CFooter } from './CFooter.js';
 import ReactPlayer from 'react-player';
+import CAlert from '../components/CAlert.js'
+import $ from 'jquery';
 
 class CHome extends Component {
 
     show = false;
 
+    jQueryCode = () =>{
+        $('.alert').hide(10000);
+    }
+
     ShowSite() {
         this.show = true;
         console.log(this.show);
         this.forceUpdate();
+    }
+
+    componentDidMount(){
+        this.jQueryCode();
     }
 
     render() {
@@ -28,6 +38,7 @@ class CHome extends Component {
                     </div>
                 ) : (
                     <div>
+                        <CAlert className='alert'/>
                         <div className="home-blur">
                             <ReactPlayer className="player-background" autoplay muted
                                 allowfullscreen="allowfullscreen"
@@ -49,7 +60,7 @@ class CHome extends Component {
                                 controls = 'false'
                             />
                         </div>
-                        <div className="home">
+                        <div className="home" id ='homeid'>
                             <h1 className="h1-home">Game design</h1>
                             <button className="home-button" onClick={() => this.ShowSite()}>Welcome</button>
                         </div>
@@ -61,3 +72,13 @@ class CHome extends Component {
 }
 
 export default CHome
+
+
+//events 
+// 1
+window.addEventListener("afterprint", onprint);
+
+function onprint() {
+  alert("This document is now being printed");
+}
+

@@ -8,8 +8,13 @@
     column-gap: 1vw;
     border: 0.1vh;
     border-style: solid none none none;
+    background-color: white;
 }
-
+.content-main{
+  width: 100%;
+  position: relative;
+  top:-20vh;
+}
 /* 
 // form
 */
@@ -192,6 +197,7 @@
 
     .content-main{
         padding-top: 0vh;
+        width: 100%;
     }
 
     .textbox {
@@ -223,7 +229,8 @@
       width: 320px;
     }
     .content-main{
-        padding-top: 5vh;
+      padding-top: 0vh;
+        width: 100%;
     }
     .textbox {
         font-size: 10px;
@@ -250,8 +257,9 @@
       width: 320px;
     }
     .content-main{
-        padding-top: 15vh;
+      padding-top: 0vh;
         justify-content: space-between;
+        width: 100%;
     }
     .textbox {
         font-size: 1.5vh;

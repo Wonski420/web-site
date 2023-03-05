@@ -6,7 +6,7 @@ import logo from '../img/Unity-Emblem.png';
 export const CFooter = (props) => {
     return (
         <div className="footer">
-            <p>
+            <p onp>
                 @copyright 2023
             </p>
             <CFooterLogo/>
@@ -15,7 +15,7 @@ export const CFooter = (props) => {
 }
 
 
-class CFooterLogo extends CLogo{
+class CFooterLogo extends CLogo {
 
     constructor(){
         super('footer-logo',logo);

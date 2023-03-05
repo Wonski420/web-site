@@ -3,19 +3,19 @@ import '../style/CContent.css'
 import defaultText from '../res/text.json'
 import formText from '../res/form.json'
 
-const DivVideo = ({ link,title }) => {
+export const DivVideo = ({ link,title }) => {
     return (
         <div className="div-video">
-            <iframe src={link} title={title}>
+            <iframe src={link} title={title} onSuspend={()=>{alert("no media data")}} onVolumeChange={()=>{alert("volume")}}>
             </iframe>
         </div>
     )
 }
 
-const TextBox = ({ title, text }) => {
+export const TextBox = ({ title, text }) => {
     return (
         <div>
-            <h1 onClick={() => { alert(title) }}>{title}</h1>
+            <h1 id = {title} onClick={() => { alert(title) }} onPointerEnter={()=>{PointerEnter(title)}} onPointerOut={()=>{PointerExit(title)}}>{title}</h1>
             <p className="textbox">
                 {text.content}
             </p>
@@ -23,19 +23,19 @@ const TextBox = ({ title, text }) => {
     )
 }
 
-const TextForm = ({ content }) => {
+const TextForm = ({ }) => {
     const [toggleForm, setToggleForm] = React.useState(true);
     const [exitForm, setExitForm] = React.useState(false);
 
     return (
         <div>
             {toggleForm && exitForm == false ?
-                <div class="form" draggable='true' id='draggable' onLoad={LoadForm()}>
+                <div class="form" draggable='true' id='draggable'>
                     <button className="form-exit" onClick={() => setExitForm(true)}>X</button>
-                    <div class="title">Welcome</div>
+                    <div class="title" id="formTitle" onMouseEnter={()=>LoadForm()}>Welcome</div>
                     <div class="subtitle">Let's create your account!</div>
                     <div class="input-container ic1">
-                        <input id="firstname" class="input" type="text" placeholder=" " />
+                        <input id="firstname" class="input" type="text" placeholder=" "/>
                         <div class="cut"></div>
                         <label for="firstname" class="placeholder">First name</label>
                     </div>
@@ -108,5 +108,13 @@ document.addEventListener('dragend', function (event) {
 });
 //4
 function LoadForm(){
-    //alert('Please Complete form');
+    document.getElementById("formTitle").style.color = "red";
+}
+
+function PointerEnter(title){
+    document.getElementById(title).style.color = "blue";
+}
+
+function PointerExit(title){
+    document.getElementById(title).style.color = "black";
 }

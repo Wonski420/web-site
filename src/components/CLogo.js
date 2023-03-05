@@ -1,14 +1,11 @@
 import { Component } from "react";
 import '../style/CHeader.css';
 import logo from '../img/Unity-Emblem.png';
+import { Link } from 'react-router-dom';
 
-class CLogo extends Component{
+class CLogo extends Component {
 
-    static refreshPage() {
-        window.refreshPage();
-    }
-
-    constructor(style,img){
+    constructor(style, img) {
         super();
         this.state = {
             styleclass: style,
@@ -16,18 +13,22 @@ class CLogo extends Component{
         };
     }
 
-    renderPartial(){
-        return(
+    renderPartial() {
+        return (
             <div className={this.state.styleclass}>
-                <img src={this.state.image} className='headerLogo' alt='logo' onClick={CLogo.refreshPage}></img>
+                <Link to="/">
+                    <img src={this.state.image} className='headerLogo' alt='logo'></img>
+                </Link>
             </div>
         );
     }
 
-    render(){
-        return(
-            <div className='header-logo'>
-                <img src={logo} className='headerLogo' alt='logo' onClick={CLogo.refreshPage}></img>
+    render() {
+        return (
+            <div className='headerContainer'>
+                <Link to="/">
+                    <img src={logo} className='headerLogo' alt='logo'></img>
+                </Link>
             </div>
         );
     }

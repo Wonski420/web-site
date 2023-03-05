@@ -9,8 +9,9 @@
     border: 0.1vh;
     border-style: solid none solid none;
     position: fixed;
-    top: 11vh;
+    top: 10.5vh;
     background-color: white;
+    left: 0;
 }
 
 .navbar-button {

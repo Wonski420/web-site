@@ -1,25 +1,17 @@
 import React, { Component } from "react";
 import '../style/CHome.css'
-import CContent from './CContent.js';
-import CHeader from './CHeader.js';
-import { CNavbar } from './CNavbar.js';
-import { CFooter } from './CFooter.js';
+import {Link} from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import CAlert from '../components/CAlert.js'
 import $ from 'jquery';
 
 class CHome extends Component {
-
-    show = false;
+    constructor(props){
+        super(props);
+    }
 
     jQueryCode = () =>{
         $('.alert').hide(10000);
-    }
-
-    ShowSite() {
-        this.show = true;
-        console.log(this.show);
-        this.forceUpdate();
     }
 
     componentDidMount(){
@@ -28,15 +20,7 @@ class CHome extends Component {
 
     render() {
         return (
-            <div>
-                {this.show ? (
-                    <div className="home-base">
-                        <CHeader />
-                        <CNavbar />
-                        <CContent />
-                        <CFooter />
-                    </div>
-                ) : (
+            <div className="home-main">
                     <div>
                         <CAlert className='alert'/>
                         <div className="home-blur">
@@ -62,10 +46,11 @@ class CHome extends Component {
                         </div>
                         <div className="home" id ='homeid'>
                             <h1 className="h1-home">Game design</h1>
-                            <button className="home-button" onClick={() => this.ShowSite()}>Welcome</button>
+                            <Link to="/start">
+                                <button className="home-button">Welcome</button>
+                            </Link>
                         </div>
                     </div>
-                )}
             </div>
         );
     }

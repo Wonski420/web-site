@@ -2,12 +2,28 @@ import React, { Component } from "react";
 import '../style/CContent.css'
 import defaultText from '../res/text.json'
 import formText from '../res/form.json'
+import CHome from "./CHome";
+import ReactPlayer from "react-player";
 
 export const DivVideo = ({ link,title }) => {
     return (
         <div className="div-video">
-            <iframe src={link} title={title} onSuspend={()=>{alert("no media data")}} onVolumeChange={()=>{alert("volume")}}>
-            </iframe>
+            <ReactPlayer
+            autoplay muted
+            allowfullscreen="allowfullscreen"
+            config={{
+                youtube: {
+                    frameborder: 0,
+                    fs: 0,
+                    disablekb: 1,
+                    controls: 0,
+                    playerVars: { showinfo: 1 }
+                },
+            }}
+            url={link}
+            width='100%'
+            height='100%'
+            />
         </div>
     )
 }
@@ -15,51 +31,12 @@ export const DivVideo = ({ link,title }) => {
 export const TextBox = ({ title, text }) => {
     return (
         <div>
-            <h1 id = {title} onClick={() => { alert(title) }} onPointerEnter={()=>{PointerEnter(title)}} onPointerOut={()=>{PointerExit(title)}}>{title}</h1>
+            <h1 id = {title}>{title}</h1>
             <p className="textbox">
                 {text.content}
             </p>
         </div>
     )
-}
-
-const TextForm = ({ }) => {
-    const [toggleForm, setToggleForm] = React.useState(true);
-    const [exitForm, setExitForm] = React.useState(false);
-
-    return (
-        <div>
-            {toggleForm && exitForm == false ?
-                <div class="form" draggable='true' id='draggable'>
-                    <button className="form-exit" onClick={() => setExitForm(true)}>X</button>
-                    <div class="title" id="formTitle" onMouseEnter={()=>LoadForm()}>Welcome</div>
-                    <div class="subtitle">Let's create your account!</div>
-                    <div class="input-container ic1">
-                        <input id="firstname" class="input" type="text" placeholder=" "/>
-                        <div class="cut"></div>
-                        <label for="firstname" class="placeholder">First name</label>
-                    </div>
-                    <div class="input-container ic2">
-                        <input id="lastname" class="input" type="text" placeholder=" " />
-                        <div class="cut"></div>
-                        <label for="lastname" class="placeholder">Last name</label>
-                    </div>
-                    <div class="input-container ic2">
-                        <input id="email" class="input" type="text" placeholder=" " />
-                        <div class="cut cut-short"></div>
-                        <label for="email" class="placeholder">Email</label>
-                    </div>
-                    <button type="text" class="submit" onClick={() => setToggleForm(false)}>submit</button>
-                </div>
-                :
-                exitForm ?
-                    '' :
-                    <div className="content">
-                        <TextBox title='Thanks for your opinion' text={formText} />
-                    </div>
-            }
-        </div>
-    );
 }
 
 class CContent extends Component {
@@ -68,9 +45,8 @@ class CContent extends Component {
         return (
             <div className="content-main">
                 <div className='content'>
-                    <DivVideo link="https://www.youtube.com/embed/mXFiP-2Ip4Y" title="1"/>
-                    <DivVideo link="https://www.youtube.com/embed/mXFiP-2Ip4Y" title="2"/>
-                    <DivVideo link="https://www.youtube.com/embed/mXFiP-2Ip4Y" title="3"/>
+                    <DivVideo link="https://www.youtube.com/embed/ca2ME4Wy0eM?vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&fs=0&controls=0&disablekb=1" title="1"/>
+                    <DivVideo link="https://www.youtube.com/embed/ca2ME4Wy0eM?vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&fs=0&controls=0&disablekb=1" title="1"/>
                 </div>
                 <div className='content'>
                     <TextBox title='Unity Engine' text={defaultText}
@@ -79,42 +55,12 @@ class CContent extends Component {
                     />
                 </div>
                 <div className='content'>
-                    <TextBox title='Unity Engine' text={defaultText}
-                    />
-                    <TextBox title='Unity Engine' text={defaultText}
-                    />
-                    <TextBox title='Unity Engine' text={defaultText}
-                    />
+                    <DivVideo link="https://www.youtube.com/embed/ca2ME4Wy0eM?vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&fs=0&controls=0&disablekb=1" title="1"/>
+                    <DivVideo link="https://www.youtube.com/embed/ca2ME4Wy0eM?vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&fs=0&controls=0&disablekb=1" title="1"/>
                 </div>
-                <TextForm />
             </div>
         );
     }
 }
 
 export default CContent
-
-
-//events
-//2
-document.addEventListener("ondrop", function (event) {
-    let element = document.getElementById("draggable");
-    element.style.backgroundColor = "red";
-
-});
-//3
-document.addEventListener('dragend', function (event) {
-    document.getElementById("draggable").style.backgroundColor = "#15172b";
-});
-//4
-function LoadForm(){
-    document.getElementById("formTitle").style.color = "red";
-}
-
-function PointerEnter(title){
-    document.getElementById(title).style.color = "blue";
-}
-
-function PointerExit(title){
-    document.getElementById(title).style.color = "black";
-}

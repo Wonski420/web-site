@@ -1,5 +1,4 @@
 import './App.css';
-import CHome from './components/CHome.js';
 import StartApp from './subpages/start';
 import {
   BrowserRouter as Router,
@@ -9,16 +8,17 @@ import {
 import React from "react";
 import About from './subpages/about';
 import Content from './subpages/content';
+import PlayerSite from './subpages/player';
 
 const App = () => {
 
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<CHome/>} />
-        <Route exact path="/start" element={<StartApp />} />
+        <Route exact path="/" element={<StartApp />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/content" element={<Content />} />
+        <Route exact path="/playersite" element={<PlayerSite />}/>
       </Routes>
     </Router>
   );

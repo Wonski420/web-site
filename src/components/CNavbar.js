@@ -23,9 +23,10 @@ const NavbarLinkButton = ({ text, target, applyTarget }) => {
 export const CNavbar = (props) => {
     return (
         <div className="navbar">
-            <NavbarLinkButton text="Start" target="/start" applyTarget={props.start}/>
-            <NavbarLinkButton text="Content" target="/content" applyTarget={props.content}/>
-            <NavbarLinkButton text="About" target="/about" applyTarget={props.about}/>
+            {props.start ? <NavbarLinkButton text="Start" target="/" applyTarget={props.start}/> : ""} 
+            {props.content ? <NavbarLinkButton text="Content" target="/content" applyTarget={props.content}/> : ""}
+            {props.about ? <NavbarLinkButton text="Games" target="/about" applyTarget={props.about}/> : ""}
+            {props.playersite ?<NavbarLinkButton text="Watch" target="/playersite" applyTarget={props.playersite}/> : ""}
         </div>
     );
 }

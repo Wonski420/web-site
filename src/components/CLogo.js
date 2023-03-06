@@ -1,6 +1,6 @@
 import { Component } from "react";
 import '../style/CHeader.css';
-import logo from '../img/Unity-Emblem.png';
+import logo from '../img/monstercampicon.png';
 import { Link } from 'react-router-dom';
 
 class CLogo extends Component {

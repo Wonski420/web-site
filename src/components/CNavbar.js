@@ -1,12 +1,12 @@
 import React from "react";
 import '../style/CNavbar.css'
-import { Link } from "react-router-dom";
+import { Link,LinkProps } from "react-router-dom";
 
 const NavbarLinkButton = ({ text, target, applyTarget }) => {
     return (
         <div>
             {applyTarget ?
-                <Link to={target}>
+                <Link to={target} onClick={()=>window.scrollTo(0,0)}>
                     <button className="navbar-button">
                         {text}
                     </button>

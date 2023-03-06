@@ -3,6 +3,7 @@
     height: 10vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-bottom: 0.35vw;
     padding-top: 0.2vw;
     background-color: black;
@@ -13,6 +14,7 @@
     border-style: none none solid none;
     border-color: white;
 }
+
 
 .headerLogo{
     height: 9vmin;

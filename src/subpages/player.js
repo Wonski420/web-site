@@ -9,6 +9,7 @@ export default function PlayerSite() {
             <CHome />
             <CHeader />
             <CNavbar start={true} about={true} content={true} playersite={false} />
+            <CFooter hidden={true}/>
         </div>
     )
 }

@@ -205,7 +205,7 @@
   text-shadow: -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d;
 }
 
-@media only screen and (min-width: 414px) {
+@media only screen and (max-width: 600px) {
 
   /* For smartphones: */
   .form {
@@ -218,15 +218,21 @@
   }
 
   .textbox {
-    font-size: 8px;
+    font-size: 12px;
+    overflow:auto;
+    width: 80vw;
+  }
+
+  .content h1 {
+    font-size: 4vw;
   }
 
   h1 {
-    font-size: 2vw;
+    font-size: 4vw;
   }
 
   .div-video {
-    width: 80vw;
+    width: 70vw;
     height: 40vh;
   }
 
@@ -240,7 +246,7 @@
 
   .content {
     width: 100%;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -306,9 +312,21 @@
   }
 
   .textbox {
-    font-size: 1.5vh;
+    font-size: 1vw;
+    text-align: left;
+    font-weight: bold;
+    inline-size: 25vw;
+    overflow-wrap: break-word;
+    color: white;
   }
-
+  
+  .content h1 {
+    font-size: 1.5vw;
+    color: white;
+    background: black;
+    letter-spacing: .15em;
+    text-shadow: -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d;
+  }
   h1 {
     font-size: 2vw;
   }

@@ -9,11 +9,11 @@ import '../style/Start.css'
 export default function StartApp() {
 
   return (
-    <div className="home-base">
+    <div className="start">
       <CContent />
       <CHeader />
       <CNavbar start={false} about={true} content={true} playersite={true}/>
-      <CFooter/>
+      <CFooter hidden={true}/>
     </div>
   );
 }

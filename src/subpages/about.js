@@ -12,14 +12,19 @@ export default function About() {
   return (
     <div>
       <div className="content-main">
-          <TextBox title='Content site.' text={defaultText} />
-          <TextBox title='Textbox 1.' text={defaultText} />
-          <TextBox title='Textbox 2.' text={defaultText} />
-          <TextBox title='Textbox 3.' text={defaultText} />
+          <div className="content">
+          <TextBox title='About us' text={defaultText} />
           </div>
+          <div className="content">
+          <TextBox title='About us' text={defaultText} />
+          </div>
+          <div className="content">
+          <TextBox title='About us' text={defaultText} />
+          </div>
+      </div>
       <CHeader />
       <CNavbar start={true} about={false} content={true} playersite={true}/>
-      <CFooter/>
+      <CFooter hidden={true}/>
     </div>
   );
 }

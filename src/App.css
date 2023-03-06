@@ -1,5 +1,15 @@
+body{
+  background-color: black;
+  padding: 0px;
+  width: 100%;
+}
+
 .App {
   text-align: center;
+}
+
+.mainpage{
+  width: 100%;
 }
 
 /* width */
@@ -35,7 +45,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

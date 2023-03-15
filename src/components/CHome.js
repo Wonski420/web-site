@@ -12,7 +12,7 @@ const VideoText = ({ text }) => {
     )
 }
 
-const Video = ({ url }) => {
+const Video = ({ url,play }) => {
     let [shouldPlay, updatePlayState] = useState(false);
 
     let handleEnterViewport = function () {
@@ -42,7 +42,7 @@ const Video = ({ url }) => {
                 url={url}
                 width='100%'
                 height='100%'
-                playing={shouldPlay}
+                playing={play ? true : shouldPlay}
                 loop='true'
                 controls='false'
             />
@@ -64,7 +64,7 @@ class CHome extends Component {
             <div className="home-main">
                 <div className="home-noblur">
                     <VideoText text={"First trailer"}></VideoText>
-                    <Video url="https://www.youtube.com/embed/ca2ME4Wy0eM?vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&fs=0&controls=0&disablekb=1" />
+                    <Video url="https://www.youtube.com/embed/ca2ME4Wy0eM?vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&fs=0&controls=0&disablekb=1" play={true}/>
                     <VideoText text={"Second trailer"}></VideoText>
                     <Video url="https://www.youtube.com/embed/ca2ME4Wy0eM?vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&fs=0&controls=0&disablekb=1" />
                     <VideoText text={"Third trailer"}></VideoText>

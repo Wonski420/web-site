@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import { Waypoint } from "react-waypoint";
 import '../style/CContent.css'
 import defaultText from '../res/text.json'
-import formText from '../res/form.json'
-import CHome from "./CHome";
 import ReactPlayer from "react-player";
-import Reveal from "./Reveal";
+import '../style/CHome.css'
 
-export const DivVideo = ({ link, title }) => {
+export const DivVideo = ({ link }) => {
     return (
         <div className="div-video">
             <ReactPlayer
@@ -29,14 +28,44 @@ export const DivVideo = ({ link, title }) => {
     )
 }
 
-export const TextBox = ({ title, text }) => {
+export const TextBox = ({ title, text,hide }) => {
+    let [shouldPlay, updatePlayState] = useState(false);
+
+    let handleEnterViewport = function () {
+        updatePlayState(true);
+    }
+    let handleExitViewport = function () {
+        updatePlayState(false);
+    }
+
     return (
-        <div className="reveal">
+        <div>
+            {!hide ? shouldPlay ?
+                <div className="reveal active">
+                    <h1 id={title}>{title}</h1>
+                    <p className="textbox">
+                        {text.content}
+                    </p>
+                </div>
+                :
+                <div className="reveal">
+                    <h1 id={title}>{title}</h1>
+                    <p className="textbox">
+                        {text.content}
+                    </p>
+                </div>
+            : <div className="reveal active">
             <h1 id={title}>{title}</h1>
             <p className="textbox">
                 {text.content}
             </p>
+        </div>}
+            <Waypoint className="waypoint"
+                onEnter={handleEnterViewport}
+                onLeave={handleExitViewport}>
+            </Waypoint>
         </div>
+
     )
 }
 

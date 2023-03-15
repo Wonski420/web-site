@@ -41,8 +41,3 @@ class MainPage extends Component{
 
 export default App;
 
-
-window.addEventListener("scroll", reveal);
-
-// To check the scroll position on page load
-reveal();

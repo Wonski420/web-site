@@ -13,7 +13,7 @@ export default function Content() {
     <div>
       <div className="content-main">
       <div className='content'>
-          <TextBox title={"Great content"} text={defaultText}/>
+          <TextBox title={"Great content"} text={defaultText} hide={true}/>
         </div>
         <div className='content'>
           <DivVideo link="https://www.youtube.com/embed/ca2ME4Wy0eM?vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&fs=0&controls=0&disablekb=1" title="1" />

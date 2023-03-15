@@ -13,7 +13,7 @@ export default function About() {
     <div>
       <div className="content-main">
           <div className="content">
-          <TextBox title='About us' text={defaultText} />
+          <TextBox title='About us' text={defaultText} hide={false}/>
           </div>
           <div className="content">
           <TextBox title='About us' text={defaultText} />
